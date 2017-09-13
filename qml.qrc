@@ -1,0 +1,23 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Page1.qml</file>
+        <file>Page1Form.ui.qml</file>
+        <file>qtquickcontrols2.conf</file>
+        <file>BodyListView.qml</file>
+        <file>light.png</file>
+        <file>MainMenuModel.qml</file>
+        <file>BottomMenuModel.qml</file>
+        <file>SettingBodyModel.qml</file>
+        <file>SettingHeadModel.qml</file>
+        <file>SettingBottomModel.qml</file>
+        <file>back-256.png</file>
+        <file>ContactDeviceSettingModel.qml</file>
+        <file>ImageButton.qml</file>
+        <file>png/about_kde-256.png</file>
+        <file>png/add_group-256.png</file>
+        <file>png/configure-256.png</file>
+        <file>png/find-256.png</file>
+        <file>png/gohome-256.png</file>
+    </qresource>
+</RCC>
