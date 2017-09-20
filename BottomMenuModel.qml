@@ -14,9 +14,9 @@ Rectangle {
         x : 1 * dpi
         anchors.verticalCenter: root.verticalCenter
         text : "地址:"
-        font.weight: Font.Medium
+        font.weight: Font.Bold
         font.family: "Helvetica"
-        font.pixelSize: 2.2 * dpi
+        font.pixelSize: 2.4 * dpi
         color: "#ffffff"
     }
     Label {
@@ -24,22 +24,20 @@ Rectangle {
         x : 7 * dpi
         anchors.verticalCenter: root.verticalCenter
         text : "--------"
-        font.weight: Font.Medium
+        font.weight: Font.Bold
         font.family: "Helvetica"
-        font.pixelSize: 2.2 * dpi
+        font.pixelSize: 2.4 * dpi
         color: "#AAAAAA"
     }
-
-
 
 
     Label {
         x : root.width - 30 * dpi
         anchors.verticalCenter: root.verticalCenter
         text : "状态:"
-        font.weight: Font.Medium
+        font.weight: Font.Bold
         font.family: "Helvetica"
-        font.pixelSize: 2.2 * dpi
+        font.pixelSize: 2.4 * dpi
         color: "#ffffff"
     }
     Label {
@@ -47,8 +45,8 @@ Rectangle {
         x : root.width - 24 * dpi
         anchors.verticalCenter: root.verticalCenter
         text : "正在连续..."
-        font.weight: Font.Medium
-        font.pixelSize: 2.2 * dpi
+        font.weight: Font.Bold
+        font.pixelSize: 2.4 * dpi
         color: "#AAAAAA"
     }
 
@@ -57,8 +55,9 @@ Rectangle {
         x : root.width - 38 * dpi
         anchors.verticalCenter: root.verticalCenter
         text : "debugmsg"
-        font.weight: Font.Medium
-        font.pixelSize: 2.2 * dpi
+        font.weight: Font.Bold
+        font.pixelSize: 2.4 * dpi
+        font.wordSpacing: 0.01 * dpi
         color: "#AAAAAA"
         visible: false
     }

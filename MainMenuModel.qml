@@ -17,13 +17,13 @@ Rectangle {
         text : "网络远程控制"
         font.weight: Font.Black
         font.family: "Helvetica"
-        font.pixelSize: 2.7 * dpi
+        font.pixelSize: 3 * dpi
         color: "#ffffff"
     }
 
     Label {
         x : 2 * dpi
-        y : 6 * dpi
+        y : 7 * dpi
         text : "设备名称:"
         font.weight: Font.Bold
         font.family: "Helvetica"
@@ -33,7 +33,7 @@ Rectangle {
     Label {
         id: device_name;
         x : 14 * dpi
-        y : 6 * dpi
+        y : 7 * dpi
         text : ""
         font.weight: Font.Bold
         font.family: "Helvetica"
@@ -43,7 +43,7 @@ Rectangle {
 
     Label {
         x : root.width - 20 * dpi
-        y : 6 * dpi
+        y : 7 * dpi
         text : "分组:"
         font.weight: Font.Bold
         font.family: "Helvetica"
@@ -53,7 +53,7 @@ Rectangle {
     Label {
         id : group_name_id
         x : root.width - 13 * dpi
-        y : 8.2 * dpi
+        y : 7 * dpi
         text : ""
         font.weight: Font.Bold
         font.pixelSize: 2.4 * dpi

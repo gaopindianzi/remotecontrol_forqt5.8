@@ -1,19 +1,15 @@
 import QtQuick 2.0
+import QtQuick.Controls 2.0
 import QtQuick.Window 2.0
 
 
-Rectangle {
-    width: 15 * dpi
-    height: 8 * dpi
-    radius: 1 * dpi
-    id : button
-    color : "#73b666"
-    border.color: button_press_color
-    border.width: 2
+Item {
+
+    id : root
 
     signal click
 
-    property real d_b: 2.5
+    property real d_b: 1
     property real dpi: Screen.pixelDensity * d_b
 
     property string color_type : "blue"
@@ -23,7 +19,18 @@ Rectangle {
     property color exit_font_color : "#FFFFFF"
     property string name : "Button"
 
-    Component.onCompleted: {
+Rectangle {
+    id : button
+    width: root.width
+    height: root.height
+    radius: 1 * dpi
+    color : "#73b666"
+    border.color: button_press_color
+    border.width: 2
+
+
+    Component.onCompleted :
+    {
         if(color_type == "blue") {
             button_press_color = "#66ac58"
             button_exit_color = "#6fb264"
@@ -47,17 +54,20 @@ Rectangle {
         }
         animateColor.start()
         name_change_back.start()
-        name_id.text = button.name
+        name_id.text = root.name
     }
+
+
+
 
     Text {
         id : name_id
-        anchors.centerIn: parent
+        anchors.centerIn: button
         text: "关闭"
         color: "#FFFFFF"
         font.weight: Font.Bold
         font.family: "微软雅黑"
-        font.pixelSize: 4 * dpi
+        font.pixelSize: button.height * 0.4
     }
 
     MouseArea
@@ -74,7 +84,7 @@ Rectangle {
             name_change_back.start()
         }
         onClicked: {
-            button.click();
+            root.click();
         }
     }
 
@@ -111,4 +121,7 @@ Rectangle {
         to : exit_font_color
         duration: 100
     }
+}
+
+
 }

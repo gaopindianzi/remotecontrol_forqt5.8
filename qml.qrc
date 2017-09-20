@@ -19,5 +19,6 @@
         <file>png/configure-256.png</file>
         <file>png/find-256.png</file>
         <file>png/gohome-256.png</file>
+        <file>HWColorButton.qml</file>
     </qresource>
 </RCC>

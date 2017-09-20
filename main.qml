@@ -17,8 +17,8 @@ ApplicationWindow {
     property real d_b: 1
     property real dpi: Screen.pixelDensity * d_b
 
-    property int height_a : 10.2 * dpi
-    property int height_b : 3.5 * dpi
+    property int height_a : 12 * dpi
+    property int height_b : 5 * dpi
     property int settingline_a : 16 * dpi
     property int settingline_b : 12 * dpi
 
@@ -141,21 +141,6 @@ ApplicationWindow {
                 settinghead.sethostaddr(settinglist.hostaddr,settinglist.hostport)
                 relaysocket.set_last_host_index(settinglist.radioindex);
             }
-
-        }
-
-        SettingHeadModel {
-            id : settinghead
-            x : 0
-            y : 0
-            width: main_rect.width
-            height: settingline_a
-            color : "#336699"
-            onOnreturn : {
-                console.log("main back click:" + dpi);
-                main_rect.x = 0
-                setting_rect.x = parent.width
-            }
         }
 
         SettingBottomModel {
@@ -176,12 +161,12 @@ ApplicationWindow {
                 console.log("disconnect");
             }
 
-            onDiscuss : {
+            onAdddevice : {
                 settinglist.append(settinghead.hostaddr,settinghead.hostport)
                 relaysocket.add_addrs(settinghead.hostaddr,settinghead.hostport)
             }
 
-            onAdddevice : {
+            onDeldevice : {
                 settinglist.remove(settinglist.radioindex)
                 relaysocket.del_note(settinglist.radioindex);
                 settinglist.radioindex = -1
@@ -189,6 +174,23 @@ ApplicationWindow {
 
         }
 
+
+
+
+
+        SettingHeadModel {
+            id : settinghead
+            x : 0
+            y : 0
+            width: main_rect.width
+            height: settingline_a
+            color : "#336699"
+            onOnreturn : {
+                console.log("main back click:" + dpi);
+                main_rect.x = 0
+                setting_rect.x = parent.width
+            }
+        }
         Behavior on x {
             NumberAnimation {
                 duration: 300

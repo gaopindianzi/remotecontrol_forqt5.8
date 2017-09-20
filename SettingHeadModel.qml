@@ -16,12 +16,22 @@ Rectangle {
 
     signal onreturn
 
+    Label {
+        anchors.horizontalCenter: parent.horizontalCenter
+        y : 2 * dpi
+        text : "设备管理"
+        font.weight: Font.Bold
+        font.pixelSize: 3 * dpi
+        color: "#ffffff"
+    }
+
+
     Image {
         id: image
         x : 1.5 * dpi
         y : 3 * dpi
-        width: 6 * dpi
-        height: 6 * dpi
+        width: 5 * dpi
+        height: 5 * dpi
         source: "/back-256.png"
 
         MouseArea {
@@ -32,44 +42,39 @@ Rectangle {
         }
     }
 
+
     Label {
         x : 2.5 * dpi
         y : 9.5 * dpi
         text : "地址"
         font.weight: Font.Bold
-        font.pixelSize: 3.5 * dpi
+        font.family: "Helvetica"
+        font.pixelSize: 2.4 * dpi
         color: "#ffffff"
     }
 
     TextField {
         id: host_address
-        x : 11 * dpi
-        y : 9.5 * dpi
-        width: 25 * dpi
-        height: 4.5 * dpi
-        font.pixelSize: 2.5 * dpi
+        x : 9 * dpi
+        y : 9 * dpi
+        width: root.width - 22 * dpi
+        height: 5 * dpi
+        font.pixelSize: 2.2 * dpi
+        font.weight: Font.Bold
+        font.family: "Helvetica"
         placeholderText: qsTr("address")
     }
 
     TextField {
         id: host_port
-        x : 40 * dpi
-        y : 9.5 * dpi
+        x : root.width - 12 * dpi
+        y : 9 * dpi
         width: 10 * dpi
-        height: 4.5 * dpi
-        font.pixelSize: 2.5 * dpi
-        placeholderText: qsTr("port")
-    }
-
-
-
-    Label {
-        anchors.horizontalCenter: parent.horizontalCenter
-        y : 2 * dpi
-        text : "设备管理"
+        height: 5 * dpi
+        font.pixelSize: 2.2 * dpi
         font.weight: Font.Bold
-        font.pixelSize: 3.5433 * dpi
-        color: "#ffffff"
+        font.family: "Helvetica"
+        placeholderText: qsTr("port")
     }
 
     function sethostaddr(host,port) {

@@ -12,66 +12,57 @@ Rectangle {
 
     signal connect
     signal disconnect
-    signal discuss
+    signal deldevice
     signal adddevice
 
-    property real d : 10 * dpi
-    property real a : (root.width - (4 * d)) / 5
-    property real b : a + d
+    property real b : 0.8 * root.width / 4
+    property real a : 0.2 * root.width / 5
 
-    ImageButton {
-        id : imgswitch1
-        x : b * 0 + a
+    HWColorButton {
+        x : (a + b) * 0 + a
+        width: b
+        height: 8 * dpi
         anchors.verticalCenter: parent.verticalCenter
-        buttonsize: d
-        imageup: "png/about_kde-256.png"
-        imagedown: "png/about_kde-256.png"
-        onMyclick: {
-            //console.log("index:"+column.clickindex)
+        name :"连接"
+        color_type: "green"
+        onClick: {
             root.connect();
         }
     }
 
-    ImageButton {
-        id : imgswitch2
-        x : b * 1 + a
+    HWColorButton {
+        x : (a + b) * 1 + a
+        width: b
+        height: 8 * dpi
         anchors.verticalCenter: parent.verticalCenter
-        buttonsize: d
-        imageup: "png/configure-256.png"
-        imagedown: "png/configure-256.png"
-        onMyclick: {
-            //console.log("index:"+column.clickindex)
+        name :"断开"
+        color_type: "blue"
+        onClick: {
             root.disconnect();
         }
     }
 
-    ImageButton {
-        id : imgswitch3
-        x : b * 2 + a
+    HWColorButton {
+        x : (a + b) * 2 + a
+        width: b
+        height: 8 * dpi
         anchors.verticalCenter: parent.verticalCenter
-        buttonsize: d
-        imageup: "png/add_group-256.png"
-        imagedown: "png/add_group-256.png"
-        onMyclick: {
-            //console.log("index:"+column.clickindex)
-            root.discuss();
-        }
-    }
-
-    ImageButton {
-        id : imgswitch4
-        x : b * 3 + a
-        anchors.verticalCenter: parent.verticalCenter
-        buttonsize: d
-        imageup: "png/find-256.png"
-        imagedown: "png/find-256.png"
-        onMyclick: {
-            //console.log("index:"+column.clickindex)
+        name :"添加"
+        color_type: "qing_se"
+        onClick: {
             root.adddevice();
         }
     }
 
-
-
-
+    HWColorButton {
+        x : (a + b) * 3 + a
+        width: b
+        height: 8 * dpi
+        anchors.verticalCenter: parent.verticalCenter
+        name :"删除"
+        color_type: "oringe"
+        onClick: {
+            root.deldevice();
+        }
+    }
 }

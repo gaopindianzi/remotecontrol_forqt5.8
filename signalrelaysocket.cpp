@@ -338,6 +338,10 @@ wait_connect_ok:
 
     while(1) {
 read_again:
+        if(i >= init_reg_list.count()) {
+            qDebug()<<"读取寄存器完毕:"<<i;
+            break;
+        }
         node = init_reg_list[i];
         if(node.type == REG_TYPE_WORD_READ) {
             qDebug()<<"读取word reg:"<<node.addr;
