@@ -32,4 +32,12 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     colormaker.h \
-    signalrelaysocket.h
+    signalrelaysocket.h \
+    tcp2000_command.h \
+    jthread.h
+
+DISTFILES += \
+    android/AndroidManifest.xml
+
+ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
+

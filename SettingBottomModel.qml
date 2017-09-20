@@ -7,7 +7,7 @@ Rectangle {
     width: parent.width;
     height: parent.height
 
-    property real d_b: 2.54
+    property real d_b: 1
     property real dpi: Screen.pixelDensity * d_b
 
     signal connect
@@ -15,12 +15,15 @@ Rectangle {
     signal discuss
     signal adddevice
 
+    property real d : 10 * dpi
+    property real a : (root.width - (4 * d)) / 5
+    property real b : a + d
 
     ImageButton {
         id : imgswitch1
-        x : root.width * 1 / 5 - 4 * dpi
+        x : b * 0 + a
         anchors.verticalCenter: parent.verticalCenter
-        buttonsize: 8 * dpi
+        buttonsize: d
         imageup: "png/about_kde-256.png"
         imagedown: "png/about_kde-256.png"
         onMyclick: {
@@ -31,9 +34,9 @@ Rectangle {
 
     ImageButton {
         id : imgswitch2
-        x : root.width * 2 / 5 - 4 * dpi
+        x : b * 1 + a
         anchors.verticalCenter: parent.verticalCenter
-        buttonsize: 8 * dpi
+        buttonsize: d
         imageup: "png/configure-256.png"
         imagedown: "png/configure-256.png"
         onMyclick: {
@@ -44,9 +47,9 @@ Rectangle {
 
     ImageButton {
         id : imgswitch3
-        x : root.width * 3 / 5 - 4 * dpi
+        x : b * 2 + a
         anchors.verticalCenter: parent.verticalCenter
-        buttonsize: 8 * dpi
+        buttonsize: d
         imageup: "png/add_group-256.png"
         imagedown: "png/add_group-256.png"
         onMyclick: {
@@ -57,9 +60,9 @@ Rectangle {
 
     ImageButton {
         id : imgswitch4
-        x : root.width * 4 / 5 - 4 * dpi
+        x : b * 3 + a
         anchors.verticalCenter: parent.verticalCenter
-        buttonsize: 8 * dpi
+        buttonsize: d
         imageup: "png/find-256.png"
         imagedown: "png/find-256.png"
         onMyclick: {
@@ -67,6 +70,8 @@ Rectangle {
             root.adddevice();
         }
     }
+
+
 
 
 }

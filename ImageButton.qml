@@ -4,17 +4,18 @@ Item {
     id : root
     property url imageup;
     property url imagedown;
-    property int buttonsize;
+    property real buttonsize;
     property color arccolor : "#aaaaaa"
     signal myclick
     width: buttonsize
     height: buttonsize
 
+    property real r : root.width * 0.6
 
     Image {
         id: image
-        width: root.width * 0.6
-        height: root.height * 0.6
+        width: r
+        height: r
         anchors.centerIn: root
         source: root.imageup
     }

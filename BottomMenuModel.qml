@@ -7,61 +7,72 @@ Rectangle {
     width: parent.width;
     height: parent.height
 
-    property real d_b: 3
-    property real dpi: Screen.pixelDensity.toFixed(2) * d_b
+    property real d_b: 1
+    property real dpi: Screen.pixelDensity
 
     Label {
         x : 1 * dpi
-        y : 1.8 * dpi
-        text : "设备地址:"
-        font.weight: Font.Bold
-        font.pixelSize: 2 * dpi
+        anchors.verticalCenter: root.verticalCenter
+        text : "地址:"
+        font.weight: Font.Medium
+        font.family: "Helvetica"
+        font.pixelSize: 2.2 * dpi
         color: "#ffffff"
     }
     Label {
-        x : 13 * dpi
-        y : 1.8  * dpi
+        id : ipaddr
+        x : 7 * dpi
+        anchors.verticalCenter: root.verticalCenter
         text : "--------"
-        font.weight: Font.Bold
-        font.pixelSize: 2 * dpi
-        color: "#AAAAAA"
-    }
-
-    Label {
-        x : 1 * dpi
-        y : 6 * dpi
-        text : "输出数量:"
-        font.weight: Font.Bold
-        font.pixelSize: 2 * dpi
-        color: "#ffffff"
-    }
-    Label {
-        x : 13 * dpi
-        y : 6 * dpi
-        text : "--------"
-        font.weight: Font.Bold
-        font.pixelSize: 2 * dpi
+        font.weight: Font.Medium
+        font.family: "Helvetica"
+        font.pixelSize: 2.2 * dpi
         color: "#AAAAAA"
     }
 
 
+
+
     Label {
-        x : root.width - 18 * dpi
-        y : 6 * dpi
+        x : root.width - 30 * dpi
+        anchors.verticalCenter: root.verticalCenter
         text : "状态:"
-        font.weight: Font.Bold
-        font.pixelSize: 2 * dpi
+        font.weight: Font.Medium
+        font.family: "Helvetica"
+        font.pixelSize: 2.2 * dpi
         color: "#ffffff"
     }
     Label {
-        x : root.width - 12 * dpi
-        y : 6 * dpi
+        id : uistatus
+        x : root.width - 24 * dpi
+        anchors.verticalCenter: root.verticalCenter
         text : "正在连续..."
-        font.weight: Font.Bold
-        font.pixelSize: 2 * dpi
+        font.weight: Font.Medium
+        font.pixelSize: 2.2 * dpi
         color: "#AAAAAA"
     }
 
+    Label {
+        id : uidebug
+        x : root.width - 38 * dpi
+        anchors.verticalCenter: root.verticalCenter
+        text : "debugmsg"
+        font.weight: Font.Medium
+        font.pixelSize: 2.2 * dpi
+        color: "#AAAAAA"
+        visible: false
+    }
 
+    function setstatus(msg) {
+        uistatus.text = msg;
+    }
+
+
+    function setuidebug(msg) {
+        uidebug.text = msg;
+    }
+    function setipinfo(info) {
+        ipaddr.text = info;
+    }
 
 }
