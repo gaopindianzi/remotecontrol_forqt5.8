@@ -8,7 +8,7 @@ Rectangle {
     width: parent.width;
     height: parent.height
 
-    property real d_b: 1
+    property real d_b: 2.54
     property real dpi: Screen.pixelDensity * d_b
     property string hostaddr : host_address.text
     property string hostport : host_port.text

@@ -14,7 +14,7 @@ ApplicationWindow {
     height: 1334/2
     title: qsTr("relay remote controler")
 
-    property real d_b: 1
+    property real d_b: 2.54
     property real dpi: Screen.pixelDensity * d_b
 
     property int height_a : 12 * dpi

@@ -9,7 +9,7 @@ Item {
 
     signal click
 
-    property real d_b: 1
+    property real d_b: 2.54
     property real dpi: Screen.pixelDensity * d_b
 
     property string color_type : "blue"

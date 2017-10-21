@@ -10,7 +10,7 @@ Rectangle {
     signal relayClick
     property int  relayclickindex :  -1
     property bool relayon : false
-    property real d_b: 1
+    property real d_b: 2.54
     property real dpi: Screen.pixelDensity * d_b
 
     ListModel {
